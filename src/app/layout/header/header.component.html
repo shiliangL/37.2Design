@@ -1,0 +1,14 @@
+<div class="mat-toolbar">
+  <div class="isRollup">
+    <i class="anticon anticon-menu-fold"></i>
+  </div>
+  <div>
+    <img src="../../../assets/imgs/logo-nav@2x.png" width="150" height="40" alt="">
+  </div>
+  <div class="navigation">
+    <a *ngFor="let item of NavList" class="nav-link" href="#" title={{item.title}}>{{item.title}}</a>
+  </div>
+  <div class="search">
+    <nz-input [(ngModel)]="searchValue" [nzPlaceHolder]="'输入检索'" [nzSize]="'default'"></nz-input>
+  </div>
+</div>

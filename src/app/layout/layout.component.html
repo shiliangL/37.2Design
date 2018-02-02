@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container">
+    <div class="sider_bar">
+        <div class="sider_bar_inner">
+            <ul nz-menu [nzMode]="'inline'" style="width: 240px;">
+                <div *ngFor="let item of menuList; let index = index">
+                    <li nz-menu-item *ngIf="!item.isSubMenu">
+                        <i class="anticon anticon-notification"></i>
+                        {{item.text}}
+                    </li>
+                    <li nz-submenu *ngIf="item.isSubMenu" (nzOpenChange)="openChange(index)" (click)="selectMenu()">
+                        <span title>
+                            <i class="anticon anticon-user"></i>
+                            {{item.text}}
+                        </span>
+                        <ul>
+                            <li nz-menu-item>
+                                <span title>Item 1</span>
+                            </li>
+                            <li nz-menu-item>
+                                <span title>Item 2</span>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+    <div class="view_content">
+        <div class="view_content_inner">
+            <h1>测试</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+    nz-menu-item 只有一级菜单
+
+
+
+
+-->
